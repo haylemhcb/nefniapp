@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nefnia</title>
+    <style>
+        .grupo {
+          padding: 0.3em;
+          font-size: 1.4em;
+          margin-top: 2em;
+        }
+    
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f0f4f8;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            overflow-x: hidden; /* Evita el desbordamiento horizontal */
+            
+        }
+        .container {
+            max-width: 100%; /* Asegura que el contenedor no exceda el ancho de la pantalla */
+            margin: auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column; /* Organiza los elementos en una sola columna */
+            
+        }
+        h1 {
+            text-align: center;
+            color: #007BFF;
+            font-size: 1.5em; /* Tamaño de fuente relativo */
+        }
+        .form-group {
+            margin-bottom: 15px;
+            display: flex;
+            flex-direction: row;
+
+        }
+        .form-group label {
+            margin-bottom: 5px;
+            font-weight: 500;
+            text-align: left;
+        }
+        .form-group input {
+            text-align: left;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1em; /* Tamaño de fuente relativo */
+            width: 100%; /* Asegura que los inputs ocupen todo el ancho disponible */
+            box-sizing: border-box; /* Incluye padding y border en el ancho total */
+        }
+        button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1.2em; /* Tamaño de fuente relativo */
+            width: 100%; /* Botón ocupa todo el ancho disponible */
+            margin-top: 1em;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        @media (max-width: 400px) {
+            h1 {
+                font-size: 1.2em; /* Ajusta el tamaño del título en pantallas pequeñas */
+            }
+            .form-group input, .form-group select {
+                font-size: 0.9em; /* Ajusta el tamaño de fuente de los inputs en pantallas pequeñas */
+            }
+            button {
+                font-size: 0.9em; /* Ajusta el tamaño de fuente del botón en pantallas pequeñas */
+            }
+            
+        }
+        
+        #grado {
+           font-size: 20px;
+           color: #45bb00;
+        }
+        
+    </style>
+
+    <script src="./script3.js"></script>
+    
+    <script>
+      var array_grado = new Array(8);
+
+
+      function validate() {
+        const ck1 = document.getElementById('ck1');
+        const ck2 = document.getElementById('ck2');
+        const ck3 = document.getElementById('ck3');
+        const grado = document.getElementById('grado');
+
+
+        if(!ck1.checked) grado.innerHTML = "Grado actual: " + "0";
+        if(!ck2.checked) grado.innerHTML = "Grado actual: " + "0";
+        if(!ck3.checked) grado.innerHTML = "Grado actual: " + "0";
+        if(!ck4.checked) grado.innerHTML = "Grado actual: " + "0";
+        if(!ck5.checked) grado.innerHTML = "Grado actual: " + "0";
+        if(!ck6.checked) grado.innerHTML = "Grado actual: " + "0";
+        if(!ck7.checked) grado.innerHTML = "Grado actual: " + "0";
+        if(!ck8.checked) grado.innerHTML = "Grado actual: " + "0";
+        if(!ck9.checked) grado.innerHTML = "Grado actual: " + "0";
+        if(!ck10.checked) grado.innerHTML = "Grado actual: " + "0";
+        if(!ck11.checked) grado.innerHTML = "Grado actual: " + "0";
+
+        
+        if (ck1.checked) {
+          array_grado[0] = 1;
+          grado.innerHTML = "Grado actual: " + "0";
+        }
+        
+        if (ck2.checked) {
+          array_grado[1] = 1;
+          grado.innerHTML = "Grado actual: " + "1";
+        }
+        
+        if (ck3.checked) {
+          array_grado[1] = 1;
+          grado.innerHTML = "Grado actual: " + "1";
+        }
+        
+        if (ck4.checked) {
+          array_grado[2] = 1;
+          grado.innerHTML = "Grado actual: " + "2";
+        }
+        
+        if (ck5.checked) {
+          array_grado[2] = 1;
+          grado.innerHTML = "Grado actual: " + "2";
+        }
+        
+        if (ck6.checked) {
+          array_grado[3] = 1;
+          grado.innerHTML = "Grado actual: " + "3";
+        }
+        
+        if (ck7.checked) {
+          array_grado[3] = 1;
+          grado.innerHTML = "Grado actual: " + "3";
+        }
+        
+        if (ck8.checked) {
+          array_grado[4] = 1;
+          grado.innerHTML = "Grado actual: " + "4";
+        }
+        
+        if (ck9.checked) {
+          array_grado[5] = 1;
+          grado.innerHTML = "Grado actual: " + "5";
+        }
+        
+        if (ck10.checked) {
+          array_grado[6] = 1;
+          grado.innerHTML = "Grado actual: " + "6";
+        }
+        
+        if (ck11.checked) {
+          array_grado[7] = 1;
+          grado.innerHTML = "Grado actual: " + "7";
+        }
+        
+      }        
+
+      function page2() {
+        document.location("eval2.html");
+      }
+
+
+      function leerCookie(nombre) {
+            const nombreEQ = nombre + "=";
+            const ca = document.cookie.split(';');
+            for (let i = 0; i < ca.length; i++) {
+                let c = ca[i];
+                while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+                if (c.indexOf(nombreEQ) === 0) return c.substring(nombreEQ.length, c.length);
+            }
+            return null;
+       }
+
+
+
+        function guarda() {
+         document.getElementById('form3').addEventListener('submit', function(event) {
+               event.preventDefault();
+               const ck1 = document.getElementById('ck1');
+
+
+               const fechaExpiracion = new Date();
+               fechaExpiracion.setFullYear(fechaExpiracion.getFullYear() + 10); // 10 años en el futuro
+               const expires = "expires=" + fechaExpiracion.toUTCString();
+
+   
+               if (ck1.checked) {
+                 document.cookie = "p1ck1=" + "Saludable o recuperado." + ";" + expires + ";path=/;SameSite=Lax";
+               } else {
+                 document.cookie = "p1ck1=" + "" + ";" + expires + ";path=/;SameSite=Lax";
+               }
+
+               if (ck2.checked) {
+                 document.cookie = "p1ck2=" + "Un segmento afectado (Asimétrico)." + ";" + expires + ";path=/;SameSite=Lax";
+               } else {
+                 document.cookie = "p1ck2=" + "" + ";" + expires + ";path=/;SameSite=Lax";
+               }
+
+               if (ck3.checked) {
+                 document.cookie = "p1ck3=" + "Neuropatía distal simétrica(debilidad e hipo-arreflexia limitada a tobillos y/o muñecas)." + ";" + expires + ";path=/;SameSite=Lax";
+               } else {
+                 document.cookie = "p1ck3=" + "" + ";" + expires + ";path=/;SameSite=Lax";
+               }
+               
+
+               const grado = document.getElementById("grado");
+
+               if(array_grado[0] == 1)
+                 document.cookie = "grado1=" + "Saludable"  + ";" + expires + ";path=/;SameSite=Lax";
+
+
+               if(array_grado[7] == 1)
+                 document.cookie = "grado1=" + "Fallecido"  + ";" + expires + ";path=/;SameSite=Lax";
+
+
+               if((array_grado[1] == 1) || (array_grado[2] == 1))
+                 document.cookie = "grado1=" + "Ligero"  + ";" + expires + ";path=/;SameSite=Lax";
+
+               if((array_grado[3] == 1))
+                 document.cookie = "grado1=" + "Moderado"  + ";" + expires + ";path=/;SameSite=Lax";
+
+               if((array_grado[4] == 1) || (array_grado[5] == 1) || (array_grado[6] == 1))
+                 document.cookie = "grado1=" + "Severo"  + ";" + expires + ";path=/;SameSite=Lax";
+
+
+               document.location="eval2.html";
+
+
+         });
+       }
+      
+    </script>
+</head>
+<body>
+
+<div class="container">
+    <h1>Grado de extensión</h1>
+    <div class="grupo">
+      <center><label id="grado">Grado: ---</label></center>
+    </div>
+    <form id="form3" action="eval2.html" method="get">
+        <div class="grupo">
+            <input onclick="validate();" type="checkbox" id="ck1" name="ck1"></input>
+            <label for="ck1">Saludable o recuperado.</label>
+        </div>
+        
+        <div class="grupo">
+            <input onclick="validate();" type="checkbox" id="ck2" name="ck2"></input>
+            <label for="ck2">Un segmento afectado (Asimétrico).</label>
+        </div>
+        
+        <div class="grupo">
+            <input onclick="validate();" type="checkbox" id="ck3" name="ck3"></input>
+            <label for="ck3">Neuropatía distal simétrica(debilidad e hipo-arreflexia limitada a tobillos y/o muñecas).</label>
+        </div>
+        
+        <div class="grupo">
+            <input onclick="validate();" type="checkbox" id="ck4" name="ck4"></input>
+            <label for="ck4">Un segmento afectado (Simétrico).</label>
+        </div>
+        
+        <div class="grupo">
+            <input onclick="validate();" type="checkbox" id="ck5" name="ck5"></input>
+            <label for="ck5">Neuropatía distal simétrica más alta. Debilidad e hipo-arreflexia hasta rodillas y/o codos o más.</label>
+        </div>
+
+        <div class="grupo">
+            <input onclick="validate();" type="checkbox" id="ck6" name="ck6"></input>
+            <label for="ck6">Dos segmentos afectados.</label>
+        </div>
+        
+        <div class="grupo">
+            <input onclick="validate();" type="checkbox" id="ck7" name="ck7"></input>
+            <label for="ck7">Síndrome de Miller Fisher.</label>
+        </div>
+        
+        <div class="grupo">
+            <input onclick="validate();" type="checkbox" id="ck8" name="ck8"></input>
+            <label for="ck8">Tres segmentos afectados.</label>
+        </div>
+        
+        <div class="grupo">
+            <input onclick="validate();" type="checkbox" id="ck9" name="ck9"></input>
+            <label for="ck9">Cuatro segmentos afectados..</label>
+        </div>
+        
+        <div class="grupo">
+            <input onclick="validate();" type="checkbox" id="ck10" name="ck10"></input>
+            <label for="ck10">Cinco segmentos afectados.</label>
+        </div>
+        
+        <div class="grupo">
+            <input onclick="validate();" type="checkbox" id="ck11" name="ck11"></input>
+            <label for="ck11">Muerte.</label>
+        </div>
+                
+        <button onclick="guarda();" type="submit" >Siguiente</button>
+    </form>
+</div>
+
+</body>
+</html>
+

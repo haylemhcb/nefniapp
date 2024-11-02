@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NefniaAPP</title>
+    <style>
+
+        label {margin-top: 20px;}
+
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f5f5f5;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+        }
+        input,select {
+            padding: 10px;
+            border: 2px solid #007bff;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+            width: 90%;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        input,select:focus {
+            border-color: #0056b3;
+            outline: none;
+        }
+
+        select {width: 95%;}
+        button {
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-top: 20px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+
+    </style>
+
+    <script src="./script.js"></script>
+
+</head>
+<body>
+    <div class="container">
+        <center><h2>Datos de evaluación</h2></center>
+       
+          <form id="form1" action="pacientdata.html" method="get">
+            <input id="npac" type="text" placeholder="Nombre del evaluador" required>
+            <input type="number" placeholder="Carnet de identidad"  min="11111111111" max="99999999999" id="ci" name="ci" required>
+            <input type="text" placeholder="Unidad de asistencia"  id="unid" name="unid" required>
+            <div><center><label>Provincia</label></center></div>
+            <select id="prov" title="Provincia">
+              <option>Artemisa</option>
+              <option>Ávila</option>
+              <option>Cienfuegos</option>
+              <option>Ciego de Ávila</option>
+              <option>Granma</option>
+              <option>Guantánamo</option>
+              <option>Habana</option>
+              <option>Holguín</option>
+              <option>Las Tunas</option>
+              <option>Matanzas</option>
+              <option>Mayabeque</option>
+              <option>Pinar del Río</option>
+              <option>Sancti Spíritus</option>
+              <option>Santiago de Cuba</option>
+              <option>Villa Clara</option>
+            </select>
+            <div><center><button onclick="guarda();" type="submit">Aceptar</button></center></div>
+          </form>
+    </div>
+
+</body>
+</html>
+
